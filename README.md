@@ -1,3 +1,4 @@
+
 rocketmq物理部署结构.png # rok-ler!
 ## 简介
 * 分布式、队列模型消息中间件
@@ -34,3 +35,9 @@ rocketmq物理部署结构.png # rok-ler!
 ## RocketMQ物理部署结构
 
 ![physical structure](rocketmq物理部署结构.png)
+
+> NameServer是个几乎无状态节点，可集群部署，节点间无任何信息同步。
+
+> Producer与Name Server集群中的其中一个节点（随机）建立长连接，定期从Name Server取Topic 路由信息，并向提供topic服务的Master建立长连接，且定时向master发送心跳。producer完全无状态，可集群部署。
+
+> consumer与name server集群中的其中一个节点（随机）建立长连接，定期从Name server 取topic路由信息，并向提供的master,slave建立长连接，且定时向master,slave发送心跳。consumer既可以从master订阅消息，也可以从slave订阅消息，订阅规则由borker配置决定。
