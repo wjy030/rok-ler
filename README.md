@@ -41,3 +41,5 @@ rocketmq物理部署结构.png # rok-ler!
 > Producer与Name Server集群中的其中一个节点（随机）建立长连接，定期从Name Server取Topic 路由信息，并向提供topic服务的Master建立长连接，且定时向master发送心跳。producer完全无状态，可集群部署。
 
 > consumer与name server集群中的其中一个节点（随机）建立长连接，定期从Name server 取topic路由信息，并向提供的master,slave建立长连接，且定时向master,slave发送心跳。consumer既可以从master订阅消息，也可以从slave订阅消息，订阅规则由borker配置决定。
+## RocketMQ逻辑结构
+![logical structure](RocketMQ逻辑模型.png)
