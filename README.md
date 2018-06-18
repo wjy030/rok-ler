@@ -14,3 +14,10 @@
 * Broker：消息跳转角色，负责存储消息，转发消息，（即mq本身），一般也称为Server,在JMS规范中称为Provider。
 * 广播消费：publish/subscribe，每个订阅的consumer都会消费
 * 集群消费：一个group中的consumer平均分摊消费消息
+## 集群构建模型
+* 单master模式 风险较大，一旦宕机整个服务不可用
+* 多master模式 一个集群无slave，全是Master
+
+> 优点：配置简单，宕机或重启维护对应用无影响
+
+> 缺点：宕机期间，这台机器上
