@@ -44,7 +44,7 @@
 ![logical structure](RocketMQ逻辑模型.png)
 
 > Producer group 用来表示一个发送消息应用，一个Producer Group下包含多个Producer实例，可以是多台机器，一台机器的多个进程，或一个进程的多个producer对象，一个producer group可以发送多个topic消息。producer group作用：
-  1 标识一类Producer
-  2 可以通过运维工具查询这个发送消息应用下有多个producer实例
-  3 发送分布式事务消息时，如果producer中途宕机，broker会主动回调producer group内的任意一台机器来确认事务状态。
+  1. 标识一类Producer
+  2. 可以通过运维工具查询这个发送消息应用下有多个producer实例
+  3. 发送分布式事务消息时，如果producer中途宕机，broker会主动回调producer group内的任意一台机器来确认事务状态。
 > consumer group 用来表示一个消费消息应用，一个Consumer Group下包含多个Consumer实例，可以是多台机器，一台机器的多个进程，或一个进程的多个consumer对象,一个consumer group下的多个consumer以均摊方式消费消息，如果设置为广播方式，那么consumer group下的每个实例都消费全量数据。
